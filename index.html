@@ -1,102 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="bn">
+<head>
     <meta charset="UTF-8">
-    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator - Ismail</title>
+    <style>
+        body { background: #1a1a2e; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: 'Segoe UI', sans-serif; }
+        .calculator { background: #16213e; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        #display { width: 100%; height: 60px; font-size: 24px; text-align: right; margin-bottom: 15px; padding: 10px; box-sizing: border-box; background: #0f3460; border: none; color: white; border-radius: 8px; }
+        .buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        button { padding: 20px; font-size: 18px; border: none; border-radius: 8px; background: #0f3460; color: white; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #533483; }
+        .clear { background: #e94560; }
+        .equal { background: #00d2ff; }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" id="display" readonly placeholder="0">
+  <div class="buttons">
+    <button onclick="clearDisplay()" class="clear">C</button>
+    <button onclick="deleteLast()">DEL</button>
+    <button onclick="appendToDisplay('/')">÷</button>
+    <button onclick="appendToDisplay('*')">×</button>
     
-
-  </head>
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button>
+    <button onclick="appendToDisplay('-')">-</button>
     
-  <body>
-  <style>
-
-  body {
-
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    height: 100vh;
-
-    margin: 0;
-
-  }
-
-  .card {
-
-    background-color: white;
-
-    width: 280px;
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-
-    text-align: center;
-
-    font-family: Arial, sans-serif;
-
-  }
-
-  img {
-
-    width: 120px;
-
-    height: 120px;
-
-    border-radius: 50%;
-
-    border: 4px solid #3498db;
-
-    object-fit: cover;
-
-  }
-
-  h1 { font-size: 22px; color: #333; margin: 15px 0 5px 0; }
-
-  .title { color: #7f8c8d; font-size: 16px; font-weight: bold; }
-
-  button {
-
-    background-color: #3498db;
-
-    color: white;
-
-    border: none;
-
-    padding: 12px 25px;
-
-    border-radius: 25px;
-
-    cursor: pointer;
-
-    margin-top: 20px;
-
-  }
-
-</style>
-
-<div class="card">
-
-  <img src="https://i.postimg.cc/9QqP4NBj/FB-IMG-1747543493888.jpg" alt="Profile">
-
-  <h1>আপনার নাম</h1>
-
-  <p class="title">ভবিষ্যৎ ওয়েব ডেভেলপার</p>
-
-  <p>আমি কোডিং শিখছি এবং নতুন নতুন জিনিস তৈরি করতে ভালোবাসি।</p>
-
-  <button onclick="alert('ইমেইল: example@gmail.com')">যোগাযোগ করুন</button>
-
-</div>
-    
-  </body>
-  
-</html>
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button>
